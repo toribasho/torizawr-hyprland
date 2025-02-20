@@ -7,7 +7,7 @@ notification_timeout=1000
 
 # Get brightness
 get_backlight() {
-	echo $(brightnessctl -m | cut -d, -f4)
+	echo $(brightnessctl -d intel_backlight -m | cut -d, -f4)
 }
 
 # Get icons
@@ -33,7 +33,7 @@ notify_user() {
 
 # Change brightness
 change_backlight() {
-	brightnessctl set "$1" -n && get_icon && notify_user
+	brightnessctl -d intel_backlight set "$1" -n && get_icon && notify_user
 }
 
 # Execute accordingly
