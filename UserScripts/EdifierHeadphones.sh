@@ -48,13 +48,13 @@ output_status_for_waybar() {
             tooltip="Headphones: ${HEADPHONE_MAC}\nStatus: Connected (Battery N/A)\nClick to disconnect"
         else
             text=" $battery_percent%"
-            tooltip="Headphones: ${HEADPHONE_MAC}\nStatus: Connected $battery_percent%\nClick to disconnect"
+            tooltip="Edifier W820NB+: $battery_percent%\nClick to disconnect"
         fi
         class="connected"
         alt_action="disconnect" # Informative for JSON, not used by current on-click
     else
         text=" Disc."
-        tooltip="Headphones: ${HEADPHONE_MAC}\nStatus: Disconnected\nClick to connect"
+        tooltip="Edifier W820NB+: Disconnected\nClick to connect"
         class="disconnected"
         alt_action="connect" # Informative for JSON
     fi
