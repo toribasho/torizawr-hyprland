@@ -24,7 +24,7 @@ weather_icons = {
 # to get your own location_id, go to https://weather.com & search your location.
 # once you choose your location, you can see the location_id in the URL(64 chars long hex string)
 # like this: https://weather.com/en-PH/weather/today/l/bca47d1099e762a012b9a139c36f30a0b1e647f69c0c4ac28b537e7ae9c1c200
-location_id = "bca47d1099e762a012b9a139c36f30a0b1e647f69c0c4ac28b537e7ae9c1c200"  # TODO
+location_id = "4ef8c5280811847f2f08e0da9ef4425af097a2b413c275461082f8fa4e76eb74"  # TODO
 
 # NOTE to change to deg F, change the URL to your preffered location after weather.com
 # Default is English-Philippines with Busan, South Korea as location_id
@@ -74,10 +74,12 @@ temp_max = (
 temp_min_max = f"  {temp_min}\t\t  {temp_max}"
 # print(temp_min_max)
 
+# print(html_data)
+print(html_data("span[data-testid='Wind']").text())
 # wind speed
-wind_speed = html_data("span[data-testid='Wind']").text().split("\n")[1]
+wind_speed =  html_data("span[data-testid='Wind']").text()
 wind_text = f"  {wind_speed}"
-# print(wind_text)
+print(wind_text)
 
 # humidity
 humidity = html_data("span[data-testid='PercentageValue']").text()
