@@ -75,7 +75,7 @@ temp_min_max = f"  {temp_min}\t\t  {temp_max}"
 # print(temp_min_max)
 
 # print(html_data)
-print(html_data("span[data-testid='Wind']").text())
+# print(html_data("span[data-testid='Wind']").text())
 # wind speed
 wind_speed =  html_data("span[data-testid='Wind']").text()
 wind_text = f"  {wind_speed}"
