@@ -1,6 +1,6 @@
 #!/bin/bash
 
-city=
+city=Batumi
 cachedir=~/.cache/rbn
 cachefile=${0##*/}-$1
 
