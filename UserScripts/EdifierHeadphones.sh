@@ -43,14 +43,20 @@ output_status_for_waybar() {
         fi
         # --- END OF BATTERY PARSING SECTION ---
 
+        class="connected"
         if [[ "$battery_percent" == "N/A" ]] || [[ "$battery_percent" == "--" ]]; then # If still N/A or parsing failed
             text=" Conn."
             tooltip="Headphones: ${HEADPHONE_MAC}\nStatus: Connected (Battery N/A)\nClick to disconnect"
         else
-            text=" $battery_percent%"
+            if [[ "$battery_percent" -lt 40 ]]; then
+                class="connected lowbat"
+            fi
+            if [[ "$battery_percent" -lt 20 ]]; then
+                class="connected critical"
+            fi            
+            text=" "
             tooltip="Edifier W820NB+: $battery_percent%\nClick to disconnect"
         fi
-        class="connected"
         alt_action="disconnect" # Informative for JSON, not used by current on-click
     else
         text=" Disc."
