@@ -25,7 +25,14 @@ declare -a MENU_OPTIONS
 
 # Option to disconnect if a VPN is active
 if [ -n "$ACTIVE_VPN_NAME" ]; then
-    MENU_OPTIONS+=("${ICON_DISCONNECT} Disconnect: ${ACTIVE_VPN_NAME}")
+    # MENU_OPTIONS+=("${ICON_DISCONNECT} Disconnect: ${ACTIVE_VPN_NAME}")
+    (nmcli con down id "$ACTIVE_VPN_NAME") >/dev/null 2>&1 &
+
+    sleep 2 # Brief pause to allow nmcli to initiate the action
+    if pgrep -x "waybar" > /dev/null; then
+        pkill -RTMIN+"$WAYBAR_SIGNAL" waybar
+    fi
+    exit 0 
 fi
 
 # Get all configured VPN connections (NAME field, where TYPE is vpn)
