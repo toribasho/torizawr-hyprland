@@ -45,7 +45,7 @@ output_status_for_waybar() {
 
         class="connected"
         if [[ "$battery_percent" == "N/A" ]] || [[ "$battery_percent" == "--" ]]; then # If still N/A or parsing failed
-            text=" Conn."
+            text=" ."
             tooltip="Headphones: ${HEADPHONE_MAC}\nStatus: Connected (Battery N/A)\nClick to disconnect"
         else
             if [[ "$battery_percent" -lt 40 ]]; then
