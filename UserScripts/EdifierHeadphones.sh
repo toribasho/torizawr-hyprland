@@ -59,7 +59,7 @@ output_status_for_waybar() {
         fi
         alt_action="disconnect" # Informative for JSON, not used by current on-click
     else
-        text=" Disc."
+        text=" "
         tooltip="Edifier W820NB+: Disconnected\nClick to connect"
         class="disconnected"
         alt_action="connect" # Informative for JSON
