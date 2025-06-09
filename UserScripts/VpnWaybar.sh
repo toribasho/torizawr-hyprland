@@ -34,7 +34,6 @@ if [ -n "$ACTIVE_VPN_NAME" ]; then
     # Tooltip shows more details on hover
     printf '{"text": "%s ", "tooltip": "%s Status: Connected Interface: %s IP: %s", "class": "connected"}' \
         "$ICON_CONNECTED" \
-        # "$ACTIVE_VPN_NAME" \
         "$ACTIVE_VPN_NAME" \
         "${VPN_DEVICE:-N/A}" \
         "$VPN_IP"
