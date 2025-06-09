@@ -32,14 +32,14 @@ if [ -n "$ACTIVE_VPN_NAME" ]; then
     
     # Output JSON for Waybar
     # Tooltip shows more details on hover
-    printf '{"text": "%s %s", "tooltip": "%s Status: Connected Interface: %s IP: %s", "class": "connected"}' \
+    printf '{"text": "%s ", "tooltip": "%s Status: Connected Interface: %s IP: %s", "class": "connected"}' \
         "$ICON_CONNECTED" \
-        "$ACTIVE_VPN_NAME" \
+        # "$ACTIVE_VPN_NAME" \
         "$ACTIVE_VPN_NAME" \
         "${VPN_DEVICE:-N/A}" \
         "$VPN_IP"
 else
     # VPN is disconnected
-    printf '{"text": "%s VPN Off", "tooltip": "VPN: Disconnected", "class": "disconnected"}' \
+    printf '{"text": "%s ", "tooltip": "VPN: Disconnected", "class": "disconnected"}' \
         "$ICON_DISCONNECTED"
 fi
