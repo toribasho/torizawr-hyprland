@@ -22,7 +22,7 @@ menu(){
 }
 
 main() {
-    choice=$(menu | rofi -i -dmenu -config ~/.config/rofi/config-compact.rasi | cut -d. -f1)
+    choice=$(menu | rofi -i -dmenu -config ~/.config/rofi/config-compact.rasi -dpi 100 | cut -d. -f1)
     case $choice in
         1)
             $tty $editor "$UserConfigs/ENVariables.conf"

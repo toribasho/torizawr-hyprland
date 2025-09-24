@@ -64,7 +64,7 @@ fi
 # -l: Number of lines to display
 # -markup-rows: Allow pango markup in options (if icons or formatting need it)
 # -theme-str: Apply theme string directly
-CHOSEN_OPTION=$(printf "%s\n" "${MENU_OPTIONS[@]}" | rofi -dmenu -p "$ROFI_PROMPT" -i -location 3 -l ${#MENU_OPTIONS[@]} -theme-str "$ROFI_THEME_STR" -markup-rows)
+CHOSEN_OPTION=$(printf "%s\n" "${MENU_OPTIONS[@]}" | rofi -dmenu -p "$ROFI_PROMPT" -i -location 3 -l ${#MENU_OPTIONS[@]} -theme-str "$ROFI_THEME_STR" -markup-rows -dpi 100)
 
 # Handle chosen option
 if [ -n "$CHOSEN_OPTION" ]; then
