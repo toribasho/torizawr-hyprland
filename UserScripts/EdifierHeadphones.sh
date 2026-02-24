@@ -11,7 +11,8 @@ HEADPHONE_MAC="64:68:76:5F:72:B2"
 output_status_for_waybar() {
     local info
     # Try to get info, suppress stderr initially if device is not yet known by bluetoothctl
-    info=$(bluetoothctl info "$HEADPHONE_MAC" 2>/dev/null)
+    #info=$(bluetoothctl info "$HEADPHONE_MAC" 2>/dev/null)
+    info=$( (echo "info $HEADPHONE_MAC"; sleep 0.2; echo "quit") | bluetoothctl 2>/dev/null )
     local connected=false
     local battery_percent="--" # Default if no battery info found
     local text
@@ -85,7 +86,8 @@ case "$1" in
     toggle)
         # Check current state to decide action
         # Suppress error if device not found (e.g. bluetooth off)
-        current_info=$(bluetoothctl info "$HEADPHONE_MAC" 2>/dev/null)
+        #current_info=$(bluetoothctl info "$HEADPHONE_MAC" 2>/dev/null)
+        current_info=$( (echo "info $HEADPHONE_MAC"; sleep 0.2; echo "quit") | bluetoothctl 2>/dev/null )
         if echo "$current_info" | grep -q "Connected: yes"; then
             bluetoothctl disconnect "$HEADPHONE_MAC" > /dev/null
             sleep 1
