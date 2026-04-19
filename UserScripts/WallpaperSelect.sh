@@ -9,7 +9,7 @@ wallDIR="$HOME/Pictures/wallpapers"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
 focused_monitor=$(hyprctl monitors | awk '/^Monitor/{name=$2} /focused: yes/{print name}')
 
-# swww transition config
+# awww transition config
 FPS=60
 TYPE="any"
 DURATION=2
@@ -46,8 +46,8 @@ menu() {
   done
 }
 
-# initiate swww if not running
-swww query || swww-daemon --format xrgb
+# initiate awww if not running
+awww query || awww-daemon --format xrgb
 
 # Choice of wallpapers
 main() {
@@ -60,7 +60,7 @@ main() {
   # Random choice case
   if [ "$choice" = "$RANDOM_PIC_NAME" ]; then
     RANDOM_PIC="${PICS[$((RANDOM % ${#PICS[@]}))]}"
-    swww img -o $focused_monitor "${RANDOM_PIC}" $SWWW_PARAMS
+    awww img -o $focused_monitor "${RANDOM_PIC}" $SWWW_PARAMS
     exit 0
   fi
 
@@ -75,7 +75,7 @@ main() {
   done
 
   if [[ $pic_index -ne -1 ]]; then
-    swww img -o $focused_monitor "${PICS[$pic_index]}" $SWWW_PARAMS
+    awww img -o $focused_monitor "${PICS[$pic_index]}" $SWWW_PARAMS
   else
     echo "Image not found."
     exit 1
