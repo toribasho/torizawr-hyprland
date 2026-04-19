@@ -79,7 +79,7 @@ esac
 
 #echo $temp $condition
 
-temperature="$temp($feel_temp)°C Humidity:$humidity% Wind:$wind->$wind_dir"
+temperature="$temp($feel_temp)°C \nHumidity:$humidity% \nWind:$wind->$wind_dir"
 temp_short="$temp($feel_temp)°C"
 
 # Example logic for dynamic coloring
@@ -106,6 +106,6 @@ jq -n -c \
 
 #  --arg text "$temp_short $condition" \
 
-cached_weather=" $temperature  \n$condition"
+cached_weather=" $temperature  \n$condition $condition_str"
 
 echo -e $cached_weather >  ~/.cache/.weather_cache
