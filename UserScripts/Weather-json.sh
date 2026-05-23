@@ -32,6 +32,8 @@ condition_str=$(echo "$weather_json" | jq -r '.current_condition[0].weatherDesc[
 humidity=$(echo "$weather_json" | jq -r '.current_condition[0].humidity')
 wind=$(echo "$weather_json" | jq -r '.current_condition[0].windspeedKmph')
 wind_dir=$(echo "$weather_json" | jq -r '.current_condition[0].winddir16Point')
+forecast_dt=$(echo "$weather_json" | jq =r '.current_condition[0].localObsDateTime')
+forecast_time=${forecast_dt:11}
 
 # Restore IFSClear
 IFS=$SAVEIFS
@@ -92,7 +94,7 @@ else
 fi
 
 # Construct the tooltip with Pango markup
-tooltip="<span color='$temp_color'>$city: $temp($feel_temp)°C</span>
+tooltip="<span color='$temp_color'>$condition_str: $temp($feel_temp)°C @ $forecast_time</span>
 <span color='#e0af68'>Humidity: $humidity%</span>
 <span color='#bb9af7'>Wind: $wind->$wind_dir</span>"
 
