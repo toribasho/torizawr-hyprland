@@ -32,8 +32,10 @@ condition_str=$(echo "$weather_json" | jq -r '.current_condition[0].weatherDesc[
 humidity=$(echo "$weather_json" | jq -r '.current_condition[0].humidity')
 wind=$(echo "$weather_json" | jq -r '.current_condition[0].windspeedKmph')
 wind_dir=$(echo "$weather_json" | jq -r '.current_condition[0].winddir16Point')
-forecast_dt=$(echo "$weather_json" | jq =r '.current_condition[0].localObsDateTime')
-forecast_time=${forecast_dt:11}
+forecast_time=$(echo "$weather_json" | jq -r '.current_condition[0].observation_time')
+# echo $forecast_dt
+# forecast_time=${forecast_dt:11}
+echo $forecast_time
 
 # Restore IFSClear
 IFS=$SAVEIFS
