@@ -35,7 +35,7 @@ wind_dir=$(echo "$weather_json" | jq -r '.current_condition[0].winddir16Point')
 forecast_time=$(echo "$weather_json" | jq -r '.current_condition[0].observation_time')
 # echo $forecast_dt
 # forecast_time=${forecast_dt:11}
-echo $forecast_time
+#echo $forecast_time
 
 # Restore IFSClear
 IFS=$SAVEIFS
