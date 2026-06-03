@@ -1,8 +1,24 @@
 #!/bin/bash
 
 city=Batumi
+timezone=+4
 cachedir=~/.cache/rbn
 cachefile=${0##*/}-$1
+
+adjust_time() {
+    local time_str="$1"       # e.g., "03:34 PM" or "08:15 AM"
+    local offset="$2"         # e.g., "+4", "-5", "4", or "-11"
+
+    # 1. Format the offset nicely for the date command (ensure a +/- sign)
+    if [[ ! "$offset" =~ ^[+-] ]]; then
+        offset="+$offset"
+    fi
+
+    # 2. Use GNU 'date' to parse the string and apply the hour shift
+    #    "today 03:34 PM +4 hours" -> computes the new time perfectly
+    date -d "today $time_str $offset hours" +"%I:%M %p"
+}
+
 
 if [ ! -d $cachedir ]; then
     mkdir -p $cachedir
@@ -20,7 +36,9 @@ IFS=$'\n'
 cacheage=$(($(date +%s) - $(stat -c '%Y' "$cachedir/$cachefile")))
 if [ $cacheage -gt 1740 ] || [ ! -s $cachedir/$cachefile ]; then
   weather_json=$(curl -s "https://en.wttr.in/$city?format=j1")
-  echo $weather_json > "$cachedir/$cachefile"
+  if [[ -n "$weather_json" ]]; then
+    echo $weather_json > "$cachedir/$cachefile"
+  fi  
 else
   weather_json=($(cat $cachedir/$cachefile))
 fi
@@ -32,10 +50,8 @@ condition_str=$(echo "$weather_json" | jq -r '.current_condition[0].weatherDesc[
 humidity=$(echo "$weather_json" | jq -r '.current_condition[0].humidity')
 wind=$(echo "$weather_json" | jq -r '.current_condition[0].windspeedKmph')
 wind_dir=$(echo "$weather_json" | jq -r '.current_condition[0].winddir16Point')
-forecast_time=$(echo "$weather_json" | jq -r '.current_condition[0].observation_time')
-# echo $forecast_dt
-# forecast_time=${forecast_dt:11}
-#echo $forecast_time
+forecast_time_utc=$(echo "$weather_json" | jq -r '.current_condition[0].observation_time')
+forecast_time=$(adjust_time $forecast_time_utc $timezone)
 
 # Restore IFSClear
 IFS=$SAVEIFS
