@@ -3,7 +3,31 @@
 city=Batumi
 timezone=+4
 cachedir=~/.cache/rbn
-cachefile=${0##*/}-$1
+cachefile=${0##*/}-$city
+cache_ttl=1800
+
+# Set a default state for the force flag
+FORCE_REFRESH=false
+
+# Loop through all arguments passed to the script
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --force|-f)
+            FORCE_REFRESH=true
+            shift # Move to the next argument
+            ;;
+        --city|-c)
+            # Example of an argument that takes a value (e.g., --city "New York")
+            city="$2"
+            shift 2 # Move past the flag and its value
+            ;;
+        *)
+            # Ignore or throw an error for unknown arguments
+            echo "Unknown argument: $1" >&2
+            shift
+            ;;
+    esac
+done
 
 adjust_time() {
     local time_str="$1"       # e.g., "03:34 PM" or "08:15 AM"
@@ -34,7 +58,7 @@ SAVEIFS=$IFS
 IFS=$'\n'
 
 cacheage=$(($(date +%s) - $(stat -c '%Y' "$cachedir/$cachefile")))
-if [ $cacheage -gt 1740 ] || [ ! -s $cachedir/$cachefile ]; then
+if [ $cacheage -gt $cache_ttl ] || [ ! -s $cachedir/$cachefile ] || [ "$FORCE_REFRESH" = true ]; then
   weather_json=$(curl -s "https://en.wttr.in/$city?format=j1")
   if [[ -n "$weather_json" ]]; then
     echo $weather_json > "$cachedir/$cachefile"
