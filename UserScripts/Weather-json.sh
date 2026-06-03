@@ -43,6 +43,9 @@ else
   weather_json=($(cat $cachedir/$cachefile))
 fi
 
+if [[ -z "$weather_json" ]]; then
+  exit 0
+fi
 
 temp=$(echo "$weather_json" | jq -r '.current_condition[0].temp_C')
 feel_temp=$(echo "$weather_json" | jq -r '.current_condition[0].FeelsLikeC')
