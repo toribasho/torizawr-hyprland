@@ -1,10 +1,10 @@
 mainMod = "SUPER"
 -- Default
-scriptsDir = $HOME/.config/hypr/scripts
-configs = $HOME/.config/hypr/configs
+local scriptsDir =  hl.get_env("HOME") .. "/.config/hypr/scripts"
+local configs =     hl.get_env("HOME") .. "/.config/hypr/configs"
 -- User
-UserConfigs = $HOME/.config/hypr/UserConfigs
-UserScripts = $HOME/.config/hypr/UserScripts
+local UserConfigs = hl.get_env("HOME") .. "/.config/hypr/UserConfigs"
+local UserScripts = hl.get_env("HOME") .. "/.config/hypr/UserScripts"
 
 -- Basic
 hl.bind(mainMod .. " + Q",          hl.dsp.window.close())
@@ -18,8 +18,6 @@ hl.bind(mainMod .. " + P",          hl.dsp.window.pseudo())
 -- FEATURES / EXTRAS
 hl.bind(mainMod .. " + SHIFT + G",  hl.dsp.exec_cmd(scriptsDir .. "/GameMode.sh"))
 hl.bind(mainMod .. " + ALT + V",    hl.dsp.exec_cmd(scriptsDir .. "/ClipManager.sh"))
-
--- FEATURES / EXTRAS (UserScripts)
 hl.bind(mainMod .. " + E",          hl.dsp.exec_cmd(UserScripts .. "/QuickEdit.sh"))
 --bind = $mainMod, W, exec, $UserScripts/WallpaperSelect.sh # Select wallpaper to apply
 --bind = $mainMod SHIFT, W, exec, $UserScripts/WallpaperEffects.sh # Wallpaper Effects by imagemagickWW
@@ -77,11 +75,9 @@ local key = (i <= 10) and (i % 10) or ("F" .. (i - 10))
     hl.bind(mainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i, follow = true }))
     hl.bind(mainMod .. " + CTRL + " .. key,      hl.dsp.window.move({ workspace = i, follow = false }))
 end
-
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(mainMod .. " + mouse_down",         hl.dsp.focus({ workspace = "e+1" }))
 hl.bind(mainMod .. " + mouse_up",           hl.dsp.focus({ workspace = "e-1" }))
-
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272",          hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273",          hl.dsp.window.resize(), { mouse = true })
