@@ -2,11 +2,11 @@
 
 MainMod = "SUPER"
 -- Default
-ScriptsDir =  "/scripts"
-ConfigsDir =  "/configs"
+ScriptsDir =  os.getenv("HOME") .. "/.config/hypr/scripts"
+ConfigsDir =  os.getenv("HOME") .. "/.config/hypr/configs"
 -- User
-UserConfigs = "/UserConfigs"
-UserScripts = "/UserScripts"
+UserConfigs = os.getenv("HOME") .. "/.config/hypr/UserConfigs"
+UserScripts = os.getenv("HOME") .. "/.config/hypr/UserScripts"
 
 FilesManager = "nautilus"
 DefaultTerminal = "kitty"

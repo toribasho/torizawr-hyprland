@@ -89,3 +89,5 @@ hl.window_rule({
     size = "monitor_w * 0.7", "monitor_h * 0.7",
     match = { class = "^(xdg-desktop-portal-gtk)$"},
 })
+
+
