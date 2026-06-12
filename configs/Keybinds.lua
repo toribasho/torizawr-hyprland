@@ -1,12 +1,3 @@
-local mainMod = "SUPER"
--- Default
-local scriptsDir =  os.getenv("HOME") .. "/.config/hypr/scripts"
-local configs =     os.getenv("HOME") .. "/.config/hypr/configs"
--- User
-local UserConfigs = os.getenv("HOME") .. "/.config/hypr/UserConfigs"
-local UserScripts = os.getenv("HOME") .. "/.config/hypr/UserScripts"
-
-
 -- Basic
 hl.bind(mainMod .. " + Q",          hl.dsp.window.close())
 hl.bind(mainMod .. " + F",          hl.dsp.window.fullscreen("maximized","toggle"))
