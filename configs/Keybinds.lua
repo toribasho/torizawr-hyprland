@@ -1,10 +1,11 @@
-mainMod = "SUPER"
+local mainMod = "SUPER"
 -- Default
-local scriptsDir =  hl.get_env("HOME") .. "/.config/hypr/scripts"
-local configs =     hl.get_env("HOME") .. "/.config/hypr/configs"
+local scriptsDir =  os.getenv("HOME") .. "/.config/hypr/scripts"
+local configs =     os.getenv("HOME") .. "/.config/hypr/configs"
 -- User
-local UserConfigs = hl.get_env("HOME") .. "/.config/hypr/UserConfigs"
-local UserScripts = hl.get_env("HOME") .. "/.config/hypr/UserScripts"
+local UserConfigs = os.getenv("HOME") .. "/.config/hypr/UserConfigs"
+local UserScripts = os.getenv("HOME") .. "/.config/hypr/UserScripts"
+
 
 -- Basic
 hl.bind(mainMod .. " + Q",          hl.dsp.window.close())
