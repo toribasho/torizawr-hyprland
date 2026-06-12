@@ -1,9 +1,9 @@
 -- Basic
 hl.bind(MainMod .. " + Q",          hl.dsp.window.close())
-hl.bind(MainMod .. " + F",          hl.dsp.window.fullscreen("fullscreen","toggle"))
 hl.bind(MainMod .. " + SHIFT + Q",  hl.dsp.exec_cmd(ScriptsDir .. "/KillActiveProcess.sh"))
 --hl.bind(MainMod .. " + SHIFT + F",  hl.dsp.window.float({ action = "toggle" }))
-hl.bind(MainMod .. " + SHIFT + F",  hl.dsp.window.fullscreen("maximized","toggle"))
+hl.bind(MainMod .. " + F",          hl.dsp.window.fullscreen({mode = "maximized", action = "toggle"}))
+hl.bind(MainMod .. " + SHIFT + F",  hl.dsp.window.fullscreen({mode = "fullscreen", action = "toggle"}))
 hl.bind(MainMod .. " + L",          hl.dsp.exec_cmd(ScriptsDir .. "/LockScreen.sh"))
 hl.bind(MainMod .. " + P",          hl.dsp.window.pseudo())
 --bind = $mainMod ALT, F, exec, hyprctl dispatch workspaceopt allfloat

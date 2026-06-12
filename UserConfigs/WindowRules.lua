@@ -52,6 +52,7 @@ hl.window_rule({
     name = "firefox_subwindows",
     match = { class = "^firefox$", title = "^(Library)$"},
     float = 1,
+    size = "monitor_w * 0.7", "monitor_h * 0.7",
 })
 hl.window_rule({
     name = "arcida-launcher",
@@ -89,5 +90,3 @@ hl.window_rule({
     size = "monitor_w * 0.7", "monitor_h * 0.7",
     match = { class = "^(xdg-desktop-portal-gtk)$"},
 })
-
-
