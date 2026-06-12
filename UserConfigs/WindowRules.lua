@@ -52,12 +52,17 @@ hl.window_rule({
     name = "firefox_subwindows",
     match = { class = "^firefox$", title = "^(Library)$"},
     float = 1,
-    size = "monitor_w * 0.7", "monitor_h * 0.7",
+    size = {"monitor_w * 0.7", "monitor_h * 0.7"},
 })
 hl.window_rule({
     name = "arcida-launcher",
     match = { class = "^arcadia-launcher.exe"},
     float = 1
+})
+hl.window_rule({
+    name = "arcida-client",
+    match = { class = "^aocli.exe"},
+    maximize = true
 })
 
 -- windowrule - opacity #enable as desired
@@ -83,10 +88,10 @@ hl.window_rule({
 })
 -- windowrule v2 - size
 hl.window_rule({ 
-    size = "monitor_w * 0.6", "monitor_h * 0.7",
+    size = {"monitor_w * 0.6", "monitor_h * 0.7"},
     match = { class = "^(file-roller|org.gnome.FileRoller)$"},
 })
 hl.window_rule({ 
-    size = "monitor_w * 0.7", "monitor_h * 0.7",
+    size = {"monitor_w * 0.7", "monitor_h * 0.7"},
     match = { class = "^(xdg-desktop-portal-gtk)$"},
 })

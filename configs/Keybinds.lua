@@ -51,10 +51,10 @@ hl.bind(MainMod .. " + right",              hl.dsp.focus({ direction = "right" }
 hl.bind(MainMod .. " + up",                 hl.dsp.focus({ direction = "up" }))
 hl.bind(MainMod .. " + down",               hl.dsp.focus({ direction = "down" }))
 -- Reszie
-hl.bind(MainMod .. " + SHIFT + left",       hl.dsp.window.resize({ x = -50, y = 0,      relative = true }))
-hl.bind(MainMod .. " + SHIFT + right",      hl.dsp.window.resize({ x = 50,  y = 0,      relative = true }))
-hl.bind(MainMod .. " + SHIFT + up",         hl.dsp.window.resize({ x = 0,   y = -50,    relative = true }))
-hl.bind(MainMod .. " + SHIFT + down",       hl.dsp.window.resize({ x = 0,   y = 50,     relative = true }))
+hl.bind(MainMod .. " + SHIFT + left",       hl.dsp.window.resize({ x = -50, y = 0,      relative = true }), { locked = true, repeating = true })
+hl.bind(MainMod .. " + SHIFT + right",      hl.dsp.window.resize({ x = 50,  y = 0,      relative = true }), { locked = true, repeating = true })
+hl.bind(MainMod .. " + SHIFT + up",         hl.dsp.window.resize({ x = 0,   y = -50,    relative = true }), { locked = true, repeating = true })
+hl.bind(MainMod .. " + SHIFT + down",       hl.dsp.window.resize({ x = 0,   y = 50,     relative = true }), { locked = true, repeating = true })
 -- Local Move
 hl.bind(MainMod .. " + CTRL + left",        hl.dsp.window.move({ direction = "left" }))
 hl.bind(MainMod .. " + CTRL + right",       hl.dsp.window.move({ direction = "right" }))
