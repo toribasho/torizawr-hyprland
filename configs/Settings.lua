@@ -1,9 +1,12 @@
 -- Default Settings and gloabal variables
 
-mainMod = "SUPER"
+MainMod = "SUPER"
 -- Default
-scriptsDir =  os.getenv("HOME") .. "/.config/hypr/scripts"
-configsDir =  os.getenv("HOME") .. "/.config/hypr/configs"
+ScriptsDir =  "/scripts"
+ConfigsDir =  "/configs"
 -- User
-UserConfigs = os.getenv("HOME") .. "/.config/hypr/UserConfigs"
-UserScripts = os.getenv("HOME") .. "/.config/hypr/UserScripts"
+UserConfigs = "/UserConfigs"
+UserScripts = "/UserScripts"
+
+FilesManager = "nautilus"
+DefaultTerminal = "kitty"
