@@ -1,9 +1,8 @@
---local configs = $HOME/.config/hypr/configs
-
+-- System settings and variables
 require("configs/Settings.lua")
+-- System keybinds
 require("configs/Keybinds.lua")
 
---local UserConfigs = $HOME/.config/hypr/UserConfigs
 
 require("UserConfigs/Startup_Apps.lua")
 require("UserConfigs/ENVariables.lua")
