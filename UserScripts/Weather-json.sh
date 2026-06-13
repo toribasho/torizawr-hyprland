@@ -68,6 +68,7 @@ else
 fi
 
 if [[ -z "$weather_json" ]]; then
+  jq -n --arg text "󰖪 Off" --arg tooltip "Offline" '{text: $text, tooltip: $tooltip}'
   exit 0
 fi
 
