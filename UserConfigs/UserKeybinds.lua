@@ -13,6 +13,8 @@ hl.bind(MainMod .. " + X",          hl.dsp.exec_cmd("/home/tori/workspace/tools/
 hl.bind(MainMod .. " + I",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/pot-pitcher.sh"))
 hl.bind(MainMod .. " + O",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/pot-pitcher-3.sh"))
 hl.bind(MainMod .. " + A",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/kim-on.sh"))
+hl.bind(MainMod .. " + U",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/abys-on.sh"))
+hl.bind(MainMod .. " + C",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/kill-all-scripts.sh"))
 hl.bind(MainMod .. " + R",          hl.dsp.exec_cmd(UserScripts .. "/TinyArch_Ro_launcher.sh"))
 
 
