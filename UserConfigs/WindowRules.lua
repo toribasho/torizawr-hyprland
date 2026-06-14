@@ -69,6 +69,20 @@ hl.window_rule({
     match = { class = "^aocli.exe"},
     maximize = true
 })
+hl.window_rule({
+    name = "gnome-polkit",
+    match = { class = "org.kde.polkit-kde-authentication-agent-1"},
+    float = true,
+    center = true,
+    workspace = "active"
+})
+hl.window_rule({
+    name = "gnome-polkit",
+    match = { class = "xdg-desktop-portal-gtk"},
+    float = true,
+    center = true,
+    workspace = "active"
+})
 
 -- windowrule - opacity #enable as desired
 hl.window_rule({
