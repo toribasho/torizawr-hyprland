@@ -55,6 +55,11 @@ hl.window_rule({
     size = {"monitor_w * 0.7", "monitor_h * 0.7"},
 })
 hl.window_rule({
+    name = "firefox_pwwindow",
+    match = { class = "^firefox$", title = "^(Password Required - Mozilla Firefox)$"},
+    float = 1,
+})
+hl.window_rule({
     name = "arcida-launcher",
     match = { class = "^arcadia-launcher.exe"},
     float = 1
