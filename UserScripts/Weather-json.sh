@@ -68,6 +68,7 @@ else
 fi
 
 if [[ -z "$weather_json" ]]; then
+  jq -n --arg text "󰖪 Off" --arg tooltip "Offline" '{text: $text, tooltip: $tooltip}'
   exit 0
 fi
 
@@ -79,6 +80,10 @@ wind=$(echo "$weather_json" | jq -r '.current_condition[0].windspeedKmph')
 wind_dir=$(echo "$weather_json" | jq -r '.current_condition[0].winddir16Point')
 forecast_time_utc=$(echo "$weather_json" | jq -r '.current_condition[0].observation_time')
 forecast_time=$(adjust_time $forecast_time_utc $timezone)
+
+sea_temp=$(curl -s "https://marine-api.open-meteo.com/v1/marine?latitude=41.64&longitude=41.64&current=sea_surface_temperature" | jq '.current.sea_surface_temperature')
+# or tthis source sea_temp=$(curl -s "https://amindi.vip/en/batumi/" | grep -oP 'Sea temp\.\s*<span[^>]*>\K[0-9]+')
+sea_text=" ${sea_temp}°C"
 
 # Restore IFSClear
 IFS=$SAVEIFS
@@ -100,7 +105,7 @@ case $(echo $condition_str | tr '[:upper:]' '[:lower:]') in
 "fog" | "freezing fog")
     condition=""
     ;;
-"patchy rain possible" | "patchy light drizzle" | "light drizzle" | "patchy light rain" | "light rain" | "light rain shower" | "mist" | "rain")
+"patchy rain possible" | "patchy light drizzle" | "light drizzle" | "patchy light rain" | "light rain" | "light rain shower" | "mist" | "rain" | "rain, mist" | "patchy rain nearby")
     condition="󰼳"
     ;;
 "moderate rain at times" | "moderate rain" | "heavy rain at times" | "heavy rain" | "moderate or heavy rain shower" | "torrential rain shower" | "rain shower")
@@ -138,12 +143,22 @@ else
     temp_color="#9ece6a" # Nice Green
 fi
 
+sea_temp_color="#7aa2f7" # Cold Bl
+
+# if [ "$sea_temp" -le 20 ]; then
+#     sea_temp_color="#7aa2f7" # Cold Blue
+# elif [ "$sea_temp" -gt 28 ]; then
+#     sea_temp_color="#f7768e" # Hot Red
+# else
+#     sea_temp_color="#9ece6a" # Nice Green
+# fi
+
 # Construct the tooltip with Pango markup
 tooltip="<span color='$temp_color'>$condition_str: $temp($feel_temp)°C @ $forecast_time</span>
 <span color='#e0af68'>Humidity: $humidity%</span>
 <span color='#bb9af7'>Wind: $wind->$wind_dir</span>"
 
-color_temp="<span color='$temp_color'>$temp($feel_temp)°C $condition</span>"
+color_temp="<span color='$temp_color'>$condition $temp($feel_temp)°C</span> <span color='$sea_temp_color'>$sea_text</span> "
 
 jq -n -c \
   --arg text "$color_temp" \
