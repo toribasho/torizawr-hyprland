@@ -1,23 +1,23 @@
 -- Basic
-hl.bind(MainMod .. " + Q",          hl.dsp.window.close())
-hl.bind(MainMod .. " + SHIFT + Q",  hl.dsp.exec_cmd(ScriptsDir .. "/KillActiveProcess.sh"))
+hl.bind(MainMod .. " + Q",          hl.dsp.window.close(), { description = "Close window"})
+hl.bind(MainMod .. " + SHIFT + Q",  hl.dsp.exec_cmd(ScriptsDir .. "/KillActiveProcess.sh"), { description = "Kill window"})
 --hl.bind(MainMod .. " + SHIFT + F",  hl.dsp.window.float({ action = "toggle" }))
-hl.bind(MainMod .. " + F",          hl.dsp.window.fullscreen({mode = "maximized", action = "toggle"}))
-hl.bind(MainMod .. " + SHIFT + F",  hl.dsp.window.fullscreen({mode = "fullscreen", action = "toggle"}))
-hl.bind(MainMod .. " + L",          hl.dsp.exec_cmd(ScriptsDir .. "/LockScreen.sh"))
-hl.bind(MainMod .. " + P",          hl.dsp.window.pseudo())
+hl.bind(MainMod .. " + F",          hl.dsp.window.fullscreen({mode = "maximized", action = "toggle"}), { description = "Set Maximize"})
+hl.bind(MainMod .. " + SHIFT + F",  hl.dsp.window.fullscreen({mode = "fullscreen", action = "toggle"}), { description = "Set Fullscreen"})
+hl.bind(MainMod .. " + L",          hl.dsp.exec_cmd(ScriptsDir .. "/LockScreen.sh"), { description = "LockScreen"})
+hl.bind(MainMod .. " + P",          hl.dsp.window.pseudo(), { description = "pseudo?"})
 --bind = $mainMod ALT, F, exec, hyprctl dispatch workspaceopt allfloat
 
 -- FEATURES / EXTRAS
-hl.bind(MainMod .. " + SHIFT + G",  hl.dsp.exec_cmd(ScriptsDir .. "/GameMode.sh"))
-hl.bind(MainMod .. " + ALT + V",    hl.dsp.exec_cmd(ScriptsDir .. "/ClipManager.sh"))
-hl.bind(MainMod .. " + E",          hl.dsp.exec_cmd(UserScripts .. "/QuickEdit.sh"))
+hl.bind(MainMod .. " + SHIFT + G",  hl.dsp.exec_cmd(ScriptsDir .. "/GameMode.sh"), { description = "GameMode"})
+hl.bind(MainMod .. " + ALT + V",    hl.dsp.exec_cmd(ScriptsDir .. "/ClipManager.sh"), { description = "ClipManager"})
+hl.bind(MainMod .. " + E",          hl.dsp.exec_cmd(UserScripts .. "/QuickEdit.sh"), { description = "QuickEdit configurations"})
 --bind = $mainMod, W, exec, $UserScripts/WallpaperSelect.sh # Select wallpaper to apply
 --bind = $mainMod SHIFT, W, exec, $UserScripts/WallpaperEffects.sh # Wallpaper Effects by imagemagickWW
 --bind = CTRL ALT, W, exec, $UserScripts/WallpaperRandom.sh # Random wallpapers
 
 -- Waybar / Bar related
-hl.bind(MainMod .. " + B",          hl.dsp.exec_cmd("killall -SIGUSR1 waybar"))
+hl.bind(MainMod .. " + B",          hl.dsp.exec_cmd("killall -SIGUSR1 waybar"), { description = "Hide/Show waybar"})
 
 -- To switch between windows in a floating workspace:
 
@@ -38,18 +38,18 @@ hl.bind("XF86AudioPrev",            hl.dsp.exec_cmd(ScriptsDir .. "/MediaCtrl.sh
 hl.bind("xf86audiostop",            hl.dsp.exec_cmd(ScriptsDir .. "/MediaCtrl.sh --stop"), { locked = true })
 
 -- Screenshots
-hl.bind(MainMod .. " + Print",              hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh --swappy"))
-hl.bind(MainMod .. " + SHIFT + Print",      hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh --area"))
-hl.bind(MainMod .. " + CTRL + Print",       hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh --in5"))
-hl.bind("ALT + Print",                      hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh -active "))
-hl.bind(MainMod .. " + SHIFT + S",          hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh --swappy"))
+hl.bind(MainMod .. " + Print",              hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh --swappy"), { description = "Screenshot"})
+hl.bind(MainMod .. " + SHIFT + Print",      hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh --area"), { description = "Screenshot area"})
+hl.bind(MainMod .. " + CTRL + Print",       hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh --in5"), { description = "Screenshot in5 sec"})
+hl.bind("ALT + Print",                      hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh -active "), { description = "Screenshot active window"})
+hl.bind(MainMod .. " + SHIFT + S",          hl.dsp.exec_cmd(ScriptsDir .. "/ScreenShot.sh --swappy"), { description = "Screenshot area"})
 
 -- Windows operations
 -- Focus
-hl.bind(MainMod .. " + left",               hl.dsp.focus({ direction = "left" }))
-hl.bind(MainMod .. " + right",              hl.dsp.focus({ direction = "right" }))
-hl.bind(MainMod .. " + up",                 hl.dsp.focus({ direction = "up" }))
-hl.bind(MainMod .. " + down",               hl.dsp.focus({ direction = "down" }))
+hl.bind(MainMod .. " + left",               hl.dsp.focus({ direction = "left" }), { description = "Focus left"})
+hl.bind(MainMod .. " + right",              hl.dsp.focus({ direction = "right" }), { description = "Focus right"})
+hl.bind(MainMod .. " + up",                 hl.dsp.focus({ direction = "up" }), { description = "Focus up"})
+hl.bind(MainMod .. " + down",               hl.dsp.focus({ direction = "down" }), { description = "Focus down"})
 -- Reszie
 hl.bind(MainMod .. " + SHIFT + left",       hl.dsp.window.resize({ x = -50, y = 0,      relative = true }), { locked = true, repeating = true })
 hl.bind(MainMod .. " + SHIFT + right",      hl.dsp.window.resize({ x = 50,  y = 0,      relative = true }), { locked = true, repeating = true })
@@ -64,9 +64,9 @@ hl.bind(MainMod .. " + CTRL + down",        hl.dsp.window.move({ direction = "do
 -- lua (x and b or c) == c++ (a?b:c)
 for i = 1, 20 do
 local key = (i <= 10) and (i % 10) or ("F" .. (i - 10)) 
-    hl.bind(MainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}))
-    hl.bind(MainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i, follow = true }))
-    hl.bind(MainMod .. " + CTRL + " .. key,      hl.dsp.window.move({ workspace = i, follow = false }))
+    hl.bind(MainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}), { description = "Switch to workspace"})
+    hl.bind(MainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i, follow = true }), { description = "Move window to workspace"})
+    hl.bind(MainMod .. " + CTRL + " .. key,      hl.dsp.window.move({ workspace = i, follow = false }), { description = "Send window to workspace"})
 end
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(MainMod .. " + mouse_down",         hl.dsp.focus({ workspace = "e+1" }))
