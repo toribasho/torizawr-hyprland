@@ -25,34 +25,34 @@ main() {
     choice=$(menu | rofi -i -dmenu -config ~/.config/rofi/config-compact.rasi -dpi 100 | cut -d. -f1)
     case $choice in
         1)
-            $tty $editor "$UserConfigs/ENVariables.conf"
+            $tty $editor "$UserConfigs/ENVariables.lua"
             ;;
         2)
-            $tty $editor "$UserConfigs/WindowRules.conf"
+            $tty $editor "$UserConfigs/WindowRules.lua"
             ;;
         3)
-            $tty $editor "$UserConfigs/Startup_Apps.conf"
+            $tty $editor "$UserConfigs/Startup_Apps.lua"
             ;;
         4)
-            $tty $editor "$UserConfigs/UserKeybinds.conf"
+            $tty $editor "$UserConfigs/UserKeybinds.lua"
             ;;
         5)
-            $tty $editor "$UserConfigs/Monitors.conf"
+            $tty $editor "$UserConfigs/Monitors.lua"
             ;;
         6)
             $tty $editor "$UserConfigs/Laptops.conf"
             ;;
         7)
-            $tty $editor "$UserConfigs/UserSettings.conf"
+            $tty $editor "$UserConfigs/UserSettings.lua"
             ;;
         8)
-            $tty $editor "$UserConfigs/WorkspaceRules.conf"
+            $tty $editor "$UserConfigs/WorkspaceRules.lua"
             ;;
 		9)
-            $tty $editor "$configs/Settings.conf"
+            $tty $editor "$configs/Settings.lua"
             ;;
         10)
-            $tty $editor "$configs/Keybinds.conf"
+            $tty $editor "$configs/Keybinds.lua"
             ;;
         *)
             ;;
