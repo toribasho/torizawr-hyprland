@@ -118,9 +118,9 @@ local baseConfig = {
 -- No effects for tiny-arch
 if HostMachine == "tiny-arch" then
     baseConfig.decoration.rounding = 0
-    blur.enabled = false
-    shadow.enabled = false
-    animations.enabled = false
+    baseConfig.blur.enabled = false
+    baseConfig.shadow.enabled = false
+    baseConfig.animations.enabled = false
 end
 
 hl.config(baseConfig)
