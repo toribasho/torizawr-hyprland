@@ -78,6 +78,14 @@ hl.window_rule({
     center = true,
     workspace = "active"
 })
+hl.window_rule({
+    name = "keybinds-window",
+    match = { title = "Active Hyprland Keybindings Map"},
+    float = true,
+    center = true,
+    workspace = "active",
+    size = {900, 450}
+})
 -- Arch-legion specific rules
 if HostMachine == "arch-legion" then
     hl.window_rule({
