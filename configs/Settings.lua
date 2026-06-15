@@ -10,3 +10,5 @@ UserScripts = os.getenv("HOME") .. "/.config/hypr/UserScripts"
 
 FilesManager = "nautilus"
 DefaultTerminal = "kitty"
+
+HostMachine = os.getenv("HOST")   -- arch-legion or tiny-arch
