@@ -65,11 +65,6 @@ hl.window_rule({
     float = 1
 })
 hl.window_rule({
-    name = "arcida-client",
-    match = { class = "^aocli.exe"},
-    maximize = true
-})
-hl.window_rule({
     name = "gnome-polkit",
     match = { class = "org.kde.polkit-kde-authentication-agent-1"},
     float = true,
@@ -83,6 +78,14 @@ hl.window_rule({
     center = true,
     workspace = "active"
 })
+-- Arch-legion specific rules
+if HostMachine == "arch-legion" then
+    hl.window_rule({
+        name = "arcida-client",
+        match = { class = "^aocli.exe"},
+        maximize = true
+    })
+end
 
 -- windowrule - opacity #enable as desired
 hl.window_rule({

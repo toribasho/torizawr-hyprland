@@ -15,7 +15,7 @@ hl.on("hyprland.start", function ()
 -- DE apps  
   hl.exec_cmd("waybar")
   hl.exec_cmd("swaync")
-  hl.exec_cmd("ags")
+-- hl.exec_cmd("ags") -- i think its unused
 -- clipboard manager  
   hl.exec_cmd("wl-paste --watch cliphist store")
 -- Rainbow borders  
@@ -26,19 +26,29 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("pypr")
 -- Portal hyprland fix
   hl.exec_cmd(ScriptsDir .. "/PortalHyprland.sh")
--- User Defined Apps  
--- NoGUI apps  
-  hl.exec_cmd("syncthing-gtk")
-  hl.exec_cmd("input-remapper-control --command autoload")
-  hl.exec_cmd("easyeffects --gapplication-service")
-  hl.exec_cmd("/usr/bin/hyprland-per-window-layout")
-  hl.exec_cmd(UserScripts .. "/BatteryChecker.sh")
-  hl.exec_cmd(UserScripts .. "/MouseBatChecker.sh")
-  hl.exec_cmd("/usr/bin/rquickshare")
--- GUI Apps
-  hl.exec_cmd("obsidian --use-gl=desktop --enable-features=UseOzonePlatform --ozone-platform=wayland")
-  hl.exec_cmd("subl")
-  hl.exec_cmd("telegram-desktop")
-  hl.exec_cmd("firefox")
-  hl.exec_cmd("/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=bottles --file-forwarding com.usebottles.bottles")
+-- User Defined Apps  for Arch-Legion
+  if HostMachine == "arch-legion" then
+  -- NoGUI apps  
+    hl.exec_cmd("syncthing-gtk")
+    hl.exec_cmd("input-remapper-control --command autoload")
+    hl.exec_cmd("easyeffects --gapplication-service")
+    hl.exec_cmd("/usr/bin/hyprland-per-window-layout")
+    hl.exec_cmd(UserScripts .. "/BatteryChecker.sh")
+    hl.exec_cmd(UserScripts .. "/MouseBatChecker.sh")
+    hl.exec_cmd("/usr/bin/rquickshare")
+  -- GUI Apps
+    hl.exec_cmd("obsidian --use-gl=desktop --enable-features=UseOzonePlatform --ozone-platform=wayland")
+    hl.exec_cmd("subl")
+    hl.exec_cmd("telegram-desktop")
+    hl.exec_cmd("firefox")
+    hl.exec_cmd("/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=bottles --file-forwarding com.usebottles.bottles")
+  end
+-- User Defined Apps  for Tiny-Arch
+  if HostMachine == "tiny-arch" then
+  -- NoGUI apps  
+    hl.exec_cmd("syncthing-gtk")
+    hl.exec_cmd("/usr/bin/hyprland-per-window-layout")
+    hl.exec_cmd("/home/tori/.config/hypr/UserScripts/HyprlandMonitorWorkspaceFixer.sh")
+  end
+
 end)

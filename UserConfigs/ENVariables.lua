@@ -41,12 +41,18 @@ hl.env("SDL_VIDEODRIVER", "wayland")
 hl.env("QS_NO_RELOAD_POPUP", "1")
 
 -- NVIDIA
-hl.env("LIBVA_DRIVER_NAME","nvidia") 
-hl.env("__GLX_VENDOR_LIBRARY_NAME","nvidia")
-hl.env("NVD_BACKEND","direct")
-
--- Some unset nvidia vars
+if HostMachine == "arch-legion" then
+    hl.env("LIBVA_DRIVER_NAME","nvidia") 
+    hl.env("__GLX_VENDOR_LIBRARY_NAME","nvidia")
+    hl.env("NVD_BACKEND","direct")
+end
+-- Some unset nvidia vars from old config
 --env = GBM_BACKEND,nvidia-drm 
 --env = __NV_PRIME_RENDER_OFFLOAD,1 
 --env = __VK_LAYER_NV_optimus,NVIDIA_only
 --env = WLR_DRM_NO_ATOMIC,1
+
+-- Oh-my-zsh auto update without prompt
+if HostMachine == "tiny-arch" then
+    hl.env("DISABLE_UPDATE_PROMPT",true)
+end
