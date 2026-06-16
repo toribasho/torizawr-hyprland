@@ -168,6 +168,6 @@ jq -n -c \
 
 #  --arg text "$temp_short $condition" \
 
-cached_weather=" $temperature  \n$condition $condition_str"
+cached_weather=" $temperature  \n$condition $condition_str\n$sea_text"
 
 echo -e $cached_weather >  ~/.cache/.weather_cache
