@@ -64,9 +64,9 @@ hl.bind(MainMod .. " + CTRL + down",        hl.dsp.window.move({ direction = "do
 -- lua (x and b or c) == c++ (a?b:c)
 for i = 1, 20 do
 local key = (i <= 10) and (i % 10) or ("F" .. (i - 10)) 
-    hl.bind(MainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}), { description = "Switch to workspace"})
-    hl.bind(MainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i, follow = true }), { description = "Move window to workspace"})
-    hl.bind(MainMod .. " + CTRL + " .. key,      hl.dsp.window.move({ workspace = i, follow = false }), { description = "Send window to workspace"})
+    hl.bind(MainMod .. " + " .. key,             hl.dsp.focus({ workspace = i}), { description = "Switch to workspace: "..i})
+    hl.bind(MainMod .. " + SHIFT + " .. key,     hl.dsp.window.move({ workspace = i, follow = true }), { description = "Move window to workspace: "..i})
+    hl.bind(MainMod .. " + CTRL + " .. key,      hl.dsp.window.move({ workspace = i, follow = false }), { description = "Send window to workspace: "..i})
 end
 -- Scroll through existing workspaces with mainMod + scroll
 hl.bind(MainMod .. " + mouse_down",         hl.dsp.focus({ workspace = "e+1" }))
