@@ -11,4 +11,15 @@ UserScripts = os.getenv("HOME") .. "/.config/hypr/UserScripts"
 FilesManager = "nautilus"
 DefaultTerminal = "kitty"
 
-HostMachine = os.getenv("HOST")   -- arch-legion or tiny-arch
+local function get_hostname()
+    local file = io.open("/etc/hostname", "r")
+    if file then
+        -- Read the first line and trim any trailing spaces/newlines
+        local name = file:read("*l"):gsub("%s+", "")
+        file:close()
+        return name
+    end
+    return "unknown"
+end
+
+HostMachine = get_hostname()   -- arch-legion or tiny-arch
