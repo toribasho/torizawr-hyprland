@@ -66,7 +66,7 @@ hl.window_rule({
 })
 hl.window_rule({
     name = "gnome-polkit",
-    match = { class = "org.kde.polkit-kde-authentication-agent-1"},
+    match = { class = "polkit-gnome-authentication-agent-1"},
     float = true,
     center = true,
     workspace = "active"
@@ -85,6 +85,13 @@ hl.window_rule({
     center = true,
     workspace = "active",
     size = {900, 450}
+})
+hl.window_rule({
+    name = "pavucontrol",
+    match = { class = "org.pulseaudio.pavucontrol"},
+    float = true,
+    center = true,
+    workspace = "active"
 })
 -- Arch-legion specific rules
 if HostMachine == "arch-legion" then
