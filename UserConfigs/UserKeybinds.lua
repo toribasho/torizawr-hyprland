@@ -10,7 +10,7 @@ hl.bind(MainMod .. " + code:49",    hl.dsp.exec_cmd("ags run ~/.config/ags/app/a
 if HostMachine == "arch-legion" then
 -- Ragnarok Online Binds
     hl.bind(MainMod .. " + X",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/caller.sh"), { description = "Call RO support bot"})
---    hl.bind(MainMod .. " + I",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/pot-pitcher.sh"), { description = ""})
+    hl.bind(MainMod .. " + I",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/bragi-on.sh"), { description = "Turn On: Bragi on timer"})
 --    hl.bind(MainMod .. " + O",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/pot-pitcher-3.sh"), { description = "here"})
     hl.bind(MainMod .. " + A",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/kim-on.sh"), { description = "Turn On: Kim"})
     hl.bind(MainMod .. " + U",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/abys-on.sh"), { description = "Turn On: Abys on timer"})
