@@ -1,0 +1,42 @@
+.window-bg {
+    background-color: rgba(23, 23, 30, 0.95);
+    border: 2px solid #3b4252;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.window-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #eceff4;
+}
+
+.key-cap {
+    min-width: 54px;
+    min-height: 54px;
+    background-color: #2e3440;
+    background-image: none;
+    border: 1px solid #4c566a;
+    border-radius: 6px;
+    color: #d8dee9;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    box-shadow: none;
+    text-shadow: none;
+}
+
+/* Accent highlight for buttons that possess structural keybind values */
+.key-cap.active-bind {
+    background-color: #81a1c1;
+    color: #2e3440;
+    border-color: #88c0d0;
+    font-weight: bold;
+}
+
+.key-cap.active-bind:hover {
+    background-color: #88c0d0;
+}
+
+.key-cap.empty-key {
+    opacity: 0.35;
+}
