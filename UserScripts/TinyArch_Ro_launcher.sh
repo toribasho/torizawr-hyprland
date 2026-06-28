@@ -1,1 +1,1 @@
-/home/tori/workspace/tools/ragnarok-bash-ai/launcher/launcher-legion.sh
+/home/tori/workspace/tools/ragnarok-bash-ai/launcher/launcher.sh
