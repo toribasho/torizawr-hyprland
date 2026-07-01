@@ -1,1 +1,1 @@
-/home/tori/workspace/tools/ragnarok-bash-ai/launcher/launcher.sh
+/home/tori/workspace/tools/ro-support/launcher/launcher.sh
