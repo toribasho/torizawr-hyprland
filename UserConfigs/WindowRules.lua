@@ -93,6 +93,15 @@ hl.window_rule({
     center = true,
     workspace = "active"
 })
+hl.window_rule({
+    name = "pavucontrol",
+    match = { class = "blueman-manager"},
+    float = true,
+    -- center = true,
+    move = {1815,48},
+    size = {600, 800},
+    workspace = "active"
+})
 -- Arch-legion specific rules
 if HostMachine == "arch-legion" then
     hl.window_rule({
