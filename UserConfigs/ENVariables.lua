@@ -30,7 +30,7 @@ hl.env("CLUTTER_BACKEND", "wayland")
 hl.env("MOZ_ENABLE_WAYLAND", "1")
 
 -- Set the cursor size for xcursor
-hl.env("XCURSOR_THEME", "Bibata-Modern-Ice")
+hl.env("XCURSOR_THEME", "Adwaita")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 
@@ -45,6 +45,8 @@ if HostMachine == "arch-legion" then
     hl.env("LIBVA_DRIVER_NAME","nvidia") 
     hl.env("__GLX_VENDOR_LIBRARY_NAME","nvidia")
     hl.env("NVD_BACKEND","direct")
+-- Lossless Scaling
+    hl.env("LSFG_DLL_PATH","/home/tori/Games/LosslessScaling/Lossless.dll")
 end
 -- Some unset nvidia vars from old config
 --env = GBM_BACKEND,nvidia-drm 
@@ -56,3 +58,4 @@ end
 if HostMachine == "tiny-arch" then
     hl.env("DISABLE_UPDATE_PROMPT",true)
 end
+
