@@ -94,12 +94,21 @@ hl.window_rule({
     workspace = "active"
 })
 hl.window_rule({
-    name = "pavucontrol",
+    name = "blueman-manager",
     match = { class = "blueman-manager"},
     float = true,
     -- center = true,
     move = {1815,48},
     size = {600, 800},
+    workspace = "active"
+})
+hl.window_rule({
+    name = "gazzele-wifi-tui",
+    match = { class = "kitty", title = "gazelle-tui"},
+    float = true,
+    -- center = true,
+    move = {1753,53},
+    size = {800, 1000},
     workspace = "active"
 })
 -- Arch-legion specific rules
