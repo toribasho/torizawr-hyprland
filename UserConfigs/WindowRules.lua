@@ -3,7 +3,7 @@ hl.window_rule({
     name = "apply-something",
     idle_inhibit = "fullscreen",
     match = {
-        fullscreen = 1,
+        fullscreen_state_client = 2,
     },
 })
 
