@@ -22,7 +22,7 @@ hl.window_rule({
     no_focus = true,
 })
 
--- Workspace bind & user fixes
+-- Workspace binds
 hl.window_rule({
     name = "sublime_workspace",
     match = { class = "^([Ss]ublime_text)$" },
@@ -48,6 +48,12 @@ hl.window_rule({
     match = { class = "^(com.usebottles.bottles)$"},
     workspace = 10
 })
+hl.window_rule({
+    name = "steam_rule",
+    match = { class = "^(steam)$"},
+    workspace = 9
+})
+-- Float & position rules
 hl.window_rule({
     name = "firefox_subwindows",
     match = { class = "^firefox$", title = "^(Library)$"},
