@@ -84,37 +84,12 @@ hl.window_rule({
     center = true,
     workspace = "active"
 })
-hl.window_rule({
-    name = "keybinds-window",
-    match = { title = "Active Hyprland Keybindings Map"},
-    float = true,
-    center = true,
-    workspace = "active",
-    size = {900, 450}
-})
+
 hl.window_rule({
     name = "pavucontrol",
     match = { class = "org.pulseaudio.pavucontrol"},
     float = true,
     center = true,
-    workspace = "active"
-})
-hl.window_rule({
-    name = "blueman-manager",
-    match = { class = "blueman-manager"},
-    float = true,
-    -- center = true,
-    move = {1815,48},
-    size = {600, 800},
-    workspace = "active"
-})
-hl.window_rule({
-    name = "gazzele-wifi-tui",
-    match = { class = "kitty", title = "gazelle-tui"},
-    float = true,
-    -- center = true,
-    move = {1753,53},
-    size = {800, 1000},
     workspace = "active"
 })
 -- Arch-legion specific rules
@@ -123,6 +98,41 @@ if HostMachine == "arch-legion" then
         name = "arcida-client",
         match = { class = "^aocli.exe"},
         maximize = true
+    })
+    hl.window_rule({
+        name = "keybinds-window",
+        match = { title = "Active Hyprland Keybindings Map"},
+        float = true,
+        center = true,
+        workspace = "active",
+        size = {900, 450}
+    })
+    hl.window_rule({
+        name = "blueman-manager",
+        match = { class = "blueman-manager"},
+        float = true,
+        -- center = true,
+        move = {1815,48},
+        size = {600, 800},
+        workspace = "active"
+    })
+    hl.window_rule({
+        name = "gazzele-wifi-tui",
+        match = { class = "kitty", title = "gazelle-tui"},
+        float = true,
+        -- center = true,
+        move = {1753,53},
+        size = {800, 1000},
+        workspace = "active"
+    })
+    hl.window_rule({
+        name = "nm-connection-editor",
+        match = { class = "nm-connection-editor"},
+        float = true,
+        -- center = true,
+        move = {1815,48},
+        size = {600, 800},
+        workspace = "active"
     })
 end
 
