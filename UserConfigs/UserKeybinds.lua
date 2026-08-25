@@ -3,7 +3,7 @@ hl.bind(MainMod .. " + D",          hl.dsp.exec_cmd("pkill rofi || rofi -show dr
 hl.bind(MainMod .. " + Return",     hl.dsp.exec_cmd(DefaultTerminal), { description = "kitty terminal"})
 hl.bind(MainMod .. " + T",          hl.dsp.exec_cmd(FilesManager), { description = "Nautilus File Manager"})
 hl.bind(MainMod .. " + ALT + C",    hl.dsp.exec_cmd(UserScripts .. "/RofiCalc.sh"), { description = "Simple RofiCalc"})
-hl.bind(MainMod .. " + Z",          hl.dsp.exec_cmd("pypr zoom"), { description = "Zoom"})
+hl.bind(MainMod .. " + ALT + Z",    hl.dsp.exec_cmd("pypr zoom"), { description = "Zoom"})
 hl.bind(MainMod .. " + code:49",    hl.dsp.exec_cmd("ags run ~/.config/ags/app/app.js -g 3"), { description = "Keybind viewer"})
 
 -- User Defined Binds
