@@ -48,7 +48,7 @@ hl.on("hyprland.start", function ()
   -- NoGUI apps  
     hl.exec_cmd("syncthing-gtk")
     hl.exec_cmd("/usr/bin/hyprland-per-window-layout")
-    hl.exec_cmd("/home/tori/.config/hypr/UserScripts/HyprlandMonitorWorkspaceFixer.sh")
+    hl.exec_cmd(UserScripts .. "HyprlandMonitorWorkspaceFixer.sh")
   end
 
 end)
