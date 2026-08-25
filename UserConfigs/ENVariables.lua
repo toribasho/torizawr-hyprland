@@ -1,6 +1,3 @@
--- Multi-GPU setup
-hl.env("AQ_DRM_DEVICES","/dev/dri/intel-igpu-card:/dev/dri/nvidia-dgpu-card")
-
 -- Wayland variables
 hl.env("OZONE_PLATFORM", "wayland")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "wayland")
@@ -40,8 +37,11 @@ hl.env("SDL_VIDEODRIVER", "wayland")
 -- Quickshell debug
 hl.env("QS_NO_RELOAD_POPUP", "1")
 
--- NVIDIA
+-- NVIDIA && Multi-GPU setup
 if HostMachine == "arch-legion" then
+-- Multi GPU    
+    hl.env("AQ_DRM_DEVICES","/dev/dri/intel-igpu-card:/dev/dri/nvidia-dgpu-card")
+-- Nvidia    
     hl.env("LIBVA_DRIVER_NAME","nvidia") 
     hl.env("__GLX_VENDOR_LIBRARY_NAME","nvidia")
     hl.env("NVD_BACKEND","direct")
