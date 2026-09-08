@@ -1,3 +1,3 @@
 #!/bin/bash
 
-if [[ ! -z $(pgrep blueman-manager) ]]; then pkill -9 blueman-manager; else blueman-manager; fi
+if [[ ! -z $(pgrep blueman-manager) ]]; then pkill -f "blueman-manager|blueman-applet"; else blueman-manager; fi
