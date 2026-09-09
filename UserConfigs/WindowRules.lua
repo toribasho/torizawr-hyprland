@@ -84,7 +84,6 @@ hl.window_rule({
     center = true,
     workspace = "active"
 })
-
 hl.window_rule({
     name = "pavucontrol",
     match = { class = "org.pulseaudio.pavucontrol"},
@@ -92,6 +91,15 @@ hl.window_rule({
     center = true,
     workspace = "active"
 })
+hl.window_rule({
+    name = "pavucontrol",
+    match = { class = "KeePassXC"},
+    float = true,
+    center = true,
+    size = {970, 1170},
+    workspace = "active"
+})
+
 -- Arch-legion specific rules
 if HostMachine == "arch-legion" then
     hl.window_rule({
