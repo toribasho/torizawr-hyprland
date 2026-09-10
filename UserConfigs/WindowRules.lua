@@ -92,8 +92,8 @@ hl.window_rule({
     workspace = "active"
 })
 hl.window_rule({
-    name = "pavucontrol",
-    match = { class = "KeePassXC"},
+    name = "keepassa",
+    match = { class = "KeePassXC", title = "^pwdb.kdbx.*- KeePassXC$" },
     float = true,
     center = true,
     size = {970, 1170},
