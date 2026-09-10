@@ -17,6 +17,7 @@ if HostMachine == "arch-legion" then
     hl.bind(MainMod .. " + C",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/kill-all-scripts.sh"), { description = "Stop all bot scripts on tiny-arch"})
     hl.bind(MainMod .. " + R",          hl.dsp.exec_cmd(UserScripts .. "/TinyArch_Ro_launcher.sh"), { description = "Call RO launcher for tiny-arch"})
     hl.bind(MainMod .. " + J",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-follow.sh"), { description = "Make prof autofollow"})
+    hl.bind(MainMod .. " + J",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-fortune-mayor.sh"), { description = "Call dancer support"})
 end
 if HostMachine == "tiny-arch" then
 -- Ragnarok Online Binds
