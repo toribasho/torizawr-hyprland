@@ -42,7 +42,9 @@ if HostMachine == "arch-legion" then
 -- Multi GPU    
     hl.env("AQ_DRM_DEVICES","/dev/dri/intel-igpu-card:/dev/dri/nvidia-dgpu-card")
 -- Nvidia    
-    hl.env("LIBVA_DRIVER_NAME","nvidia") 
+    -- Changed it to i965. Forcing using iGPU
+    -- hl.env("LIBVA_DRIVER_NAME","nvidia") 
+    hl.env("LIBVA_DRIVER_NAME","i965")
     hl.env("__GLX_VENDOR_LIBRARY_NAME","nvidia")
     hl.env("NVD_BACKEND","direct")
 -- Lossless Scaling
