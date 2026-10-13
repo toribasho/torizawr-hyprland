@@ -20,6 +20,8 @@ if HostMachine == "arch-legion" then
     hl.bind(MainMod .. " + M",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-fortune-mayor.sh"), { description = "Call dancer support"})
     hl.bind(MainMod .. " + code:34",    hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-thana-enter.sh"), { description = "Call thana enter script"})
     hl.bind(MainMod .. " + code:35",    hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-thana-black-key.sh"), { description = "Call thana black key getter script"})
+    hl.bind(MainMod .. " + code:20",    hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-6floor.sh"), { description = "Call thana 6 floor script"})
+    hl.bind(MainMod .. " + code:21",    hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-top-floor.sh"), { description = "Call thana top floor script"})
 end
 if HostMachine == "tiny-arch" then
 -- Ragnarok Online Binds
