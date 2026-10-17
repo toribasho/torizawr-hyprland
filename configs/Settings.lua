@@ -8,7 +8,7 @@ ConfigsDir =  os.getenv("HOME") .. "/.config/hypr/configs"
 UserConfigs = os.getenv("HOME") .. "/.config/hypr/UserConfigs"
 UserScripts = os.getenv("HOME") .. "/.config/hypr/UserScripts"
 
-FilesManager = "nautilus"
+FilesManager = "nautilus --new-window"
 DefaultTerminal = "kitty"
 
 local function get_hostname()
