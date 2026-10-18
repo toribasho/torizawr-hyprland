@@ -142,6 +142,15 @@ if HostMachine == "arch-legion" then
         size = {600, 800},
         workspace = "active"
     })
+    hl.window_rule({
+        name = "rol-laucher-window",
+        match = { class = "gjs", title = "Game Launcher"},
+        float = true,
+        center = true,
+        workspace = "active",
+        opacity = "0.9 0.6",
+        size = {400, 450}
+    })
 end
 
 -- windowrule - opacity #enable as desired
