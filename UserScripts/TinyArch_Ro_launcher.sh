@@ -1,1 +1,1 @@
-/home/tori/workspace/tools/ro-support/launcher/launcher.sh
+ags run /home/tori/workspace/tools/ro-support/launcher/v2/config.ts
