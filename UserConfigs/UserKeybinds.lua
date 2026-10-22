@@ -10,10 +10,10 @@ hl.bind(MainMod .. " + code:49",    hl.dsp.exec_cmd("ags run ~/.config/ags/app/a
 if HostMachine == "arch-legion" then
 -- Ragnarok Online Binds
     hl.bind(MainMod .. " + X",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/caller.sh"), { description = "Call RO support bot"})
-    hl.bind(MainMod .. " + I",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/bragi-on.sh"), { description = "Turn On: Bragi on timer"})
+    hl.bind(MainMod .. " + I",          hl.dsp.exec_cmd("/home/tori/workspace/gemini-code/ro-python-helper/songs-picker/start-solo-songs.sh"), { description = "Turn On: Songs on timer"})
 --    hl.bind(MainMod .. " + O",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/pot-pitcher-3.sh"), { description = "here"})
-    hl.bind(MainMod .. " + A",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/kim-on.sh"), { description = "Turn On: Kim"})
-    hl.bind(MainMod .. " + U",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/abys-on.sh"), { description = "Turn On: Abys on timer"})
+    -- hl.bind(MainMod .. " + A",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/kim-on.sh"), { description = "Turn On: Kim"})
+    hl.bind(MainMod .. " + U",          hl.dsp.exec_cmd("/home/tori/workspace/gemini-code/ro-python-helper/songs-picker/start-concert-songs.sh"), { description = "Turn On: Concert on timer"})
     hl.bind(MainMod .. " + C",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/kill-all-scripts.sh"), { description = "Stop all bot scripts on tiny-arch"})
     hl.bind(MainMod .. " + R",          hl.dsp.exec_cmd(UserScripts .. "/TinyArch_Ro_launcher.sh"), { description = "Call RO launcher for tiny-arch"})
     hl.bind(MainMod .. " + J",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-follow.sh"), { description = "Make prof autofollow"})
