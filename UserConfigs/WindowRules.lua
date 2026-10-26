@@ -144,9 +144,10 @@ if HostMachine == "arch-legion" then
     })
     hl.window_rule({
         name = "rol-laucher-window",
-        match = { class = "gjs", title = "Game Launcher"},
+        match = { class = "gjs"}, --, title = "Game Launcher"
         float = true,
         center = true,
+        stay_focused = true,
         workspace = "active",
         opacity = "0.9 0.6",
         size = {400, 450}
