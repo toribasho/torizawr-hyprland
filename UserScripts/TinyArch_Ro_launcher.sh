@@ -1,1 +1,1 @@
-ags run /home/tori/workspace/tools/ro-support/launcher/v2/config.ts
+ags run /home/tori/workspace/gemini-code/ro-python-helper/launcher/config.ts
