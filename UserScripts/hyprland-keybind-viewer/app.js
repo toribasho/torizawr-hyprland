@@ -146,6 +146,19 @@ const createKeyboardWindow = () => {
 
     win.add(mainBox);
     win.set_position(Gtk.WindowPosition.CENTER);
+
+    // --- Keyboard Navigation & Shortcuts ---
+    win.connect("key-press-event", () => {
+
+        win.destroy();
+        return true;
+        // if (keyval === Gdk.KEY_Escape) {
+        // }
+
+        // return false;
+    });
+
+
     win.show_all();
     return win;
 };
