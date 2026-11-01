@@ -23,7 +23,8 @@ if HostMachine == "arch-legion" then
     hl.bind(MainMod .. " + R",          hl.dsp.exec_cmd(UserScripts .. "/TinyArch_Ro_launcher.sh"), { description = "Call RO launcher for tiny-arch"})
     
     hl.bind(MainMod .. " + J",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-follow.sh"), { description = "Make prof autofollow"})
-    -- hl.bind(MainMod .. " + A",          hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-buffer/kim-on.sh"), { description = "Turn On: Kim"})
+    hl.bind(MainMod .. " + A",          hl.dsp.exec_cmd("/home/tori/workspace/gemini-code/ro-python-helper/soul-exchanger/fill-sp.sh"), { description = "Fill SP for last char"})
+    hl.bind(MainMod .. " + SHIFT + A",  hl.dsp.exec_cmd("ags run /home/tori/workspace/gemini-code/ro-python-helper/soul-exchanger/config.ts"), { description = "Fill SP Selector"})
 
     -- Thanatos dialog actrions
     hl.bind(MainMod .. " + code:34",    hl.dsp.exec_cmd("/home/tori/workspace/tools/ro-support/buffer/call-thana-enter.sh"), { description = "Call thana enter script"})
