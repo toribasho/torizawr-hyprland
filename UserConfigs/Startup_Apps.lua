@@ -35,7 +35,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("/usr/bin/hyprland-per-window-layout")
     hl.exec_cmd(UserScripts .. "/BatteryChecker.sh")
     hl.exec_cmd(UserScripts .. "/MouseBatChecker.sh")
-    hl.exec_cmd("/usr/bin/rquickshare")
+--    hl.exec_cmd("/usr/bin/rquickshare") # Looks like its not working aynmore
   -- GUI Apps
     hl.exec_cmd("obsidian --use-gl=desktop --enable-features=UseOzonePlatform --ozone-platform=wayland")
     hl.exec_cmd("subl")
