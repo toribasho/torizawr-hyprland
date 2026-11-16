@@ -99,6 +99,14 @@ hl.window_rule({
     size = {970, 1170},
     workspace = "active"
 })
+hl.window_rule({
+    name = "tg-media-preview",
+    match = { class = "org.telegram.desktop", title = "Media viewer" },
+    float = true,
+    center = true,
+    -- size = {970, 1170},
+    workspace = "active"
+})
 
 -- Arch-legion specific rules
 if HostMachine == "arch-legion" then
