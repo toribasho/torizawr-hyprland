@@ -58,6 +58,6 @@ end
 
 -- Oh-my-zsh auto update without prompt
 if HostMachine == "tiny-arch" then
-    hl.env("DISABLE_UPDATE_PROMPT",true)
+    hl.env("DISABLE_UPDATE_PROMPT","true")
 end
 
