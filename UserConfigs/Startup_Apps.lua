@@ -3,10 +3,6 @@ local wallDIR=os.getenv("HOME") .. "/Pictures/wallpapers"
 local SwwwRandom = UserScripts .. "/WallpaperAutoChange.sh"
 
 hl.on("hyprland.start", function ()
--- wallpaper
-  hl.exec_cmd("awww-daemon --format xrgb")
--- random wp
-  --hl.exec_cmd(SwwwRandom .. wallDIR)
 -- Startup
   hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
   hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP") -- Execute waybar, hyprpaper, firefox
@@ -28,6 +24,10 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd(ScriptsDir .. "/PortalHyprland.sh")
 -- User Defined Apps  for Arch-Legion
   if HostMachine == "arch-legion" then
+  -- wallpaper
+    hl.exec_cmd("awww-daemon --format xrgb")
+  -- random wp
+    --hl.exec_cmd(SwwwRandom .. wallDIR)    
   -- NoGUI apps  
     hl.exec_cmd("syncthing-gtk")
     hl.exec_cmd("input-remapper-control --command autoload")
