@@ -107,6 +107,15 @@ hl.window_rule({
     -- size = {970, 1170},
     workspace = "active"
 })
+hl.window_rule({
+    name = "ro-alternative-launcher",
+    match = { class = "RagnaWorldLauncher" },
+    float = true,
+    center = true,
+    -- size = {970, 1170},
+    workspace = "active"
+})
+
 
 -- Arch-legion specific rules
 if HostMachine == "arch-legion" then
