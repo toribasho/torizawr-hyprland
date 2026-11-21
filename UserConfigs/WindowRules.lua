@@ -173,7 +173,7 @@ end
 
 if HostMachine == "tiny-arch" then
     hl.window_rule({
-        name = "arcida-launcher",
+        name = "arcida-launcher-tiny",
         match = { title = "Arcadia Launcher"},
         float = 1
     })
