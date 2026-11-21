@@ -127,6 +127,8 @@ if HostMachine == "tiny-arch" then
     baseConfig.decoration.blur.enabled = false
     baseConfig.decoration.shadow.enabled = false
     baseConfig.animations.enabled = false
+    baseConfig.input.sensitivity = 0
+    baseConfig.input.accel_profile = "flat"
 end
 
 hl.config(baseConfig)
