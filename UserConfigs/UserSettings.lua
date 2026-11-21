@@ -113,6 +113,13 @@ local baseConfig = {
         warp_on_change_workspace = 2,
         no_warps = true,
     },
+    device = {
+    {
+        name = "ydotoold-virtual-device",
+        accel_profile = "flat",
+        sensitivity = 0,
+    },
+}
 }
 -- No effects for tiny-arch
 if HostMachine == "tiny-arch" then
