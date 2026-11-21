@@ -171,6 +171,14 @@ if HostMachine == "arch-legion" then
     })
 end
 
+if HostMachine == "tiny-arch" then
+    hl.window_rule({
+        name = "arcida-launcher",
+        match = { title = "Arcadia Launcher"},
+        float = 1
+    })
+end
+
 -- windowrule - opacity #enable as desired
 hl.window_rule({
     opacity = "0.9 0.8",
