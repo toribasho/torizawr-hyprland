@@ -175,7 +175,7 @@ if HostMachine == "tiny-arch" then
     -- windowrule to avoid idle while ro is running
     hl.window_rule({
         name = "ro-in-background",
-        idle_inhibit = "focus",
+        -- idle_inhibit = "focus",
         match = {
             class = "steam-proton",
             initial_title = "^Arcadia Client*",
