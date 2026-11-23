@@ -172,6 +172,16 @@ if HostMachine == "arch-legion" then
 end
 
 if HostMachine == "tiny-arch" then
+    -- windowrule to avoid idle while ro is running
+    hl.window_rule({
+        name = "ro-in-background",
+        idle_inhibit = "active",
+        match = {
+            class = "steam-proton",
+            initialTitle = "^Arcadia Client*",
+        },
+    })
+    
     hl.window_rule({
         name = "arcida-launcher-tiny",
         match = { title = "Arcadia Launcher"},
