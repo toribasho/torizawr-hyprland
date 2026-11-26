@@ -169,6 +169,18 @@ if HostMachine == "arch-legion" then
         opacity = "0.9 0.6",
         size = {400, 450}
     })
+    hl.window_rule({
+        name = "crystal-main",
+        match = { class = "crystal"},
+        workspace = 3,
+    })
+    hl.window_rule({
+        name = "crystal-layers",
+        match = { class = "crystal", title = "Слои карты"},
+        float = true,
+        size = {400, 450},
+        workspace = 3,
+    })
 end
 
 if HostMachine == "tiny-arch" then
